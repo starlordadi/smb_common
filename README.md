@@ -1,46 +1,6 @@
-# **Summerschool ETH notes**
+# **Cheatsheet**
 
-# 1.  Super Mega Bot
-
-![Screenshot](.imgs/smb.jpg)
-
-## Available Sensors:
-1. *D435* (front down) 
-2. *T265* (fisheye front)
-3. *RS-LiDAR-16* (on top) RobotSense, 16 beams, 10 hz
-4. IMU synchronized with 1 *Flir Blackfly S* USB3 (RGB)
-## Computational Power:
-1. Intel NUC 
-2. Nvidia Jetson Xavier AGX 
-# 2. Networking
-(Each robot has its own wifi)
-* WiFi Name (SSD): SMB_26x where x is the robot number 
-* Password (PSK): SMB_26x_RSS
-* NUC has IP of 10.0.x.5
-* Jetson has IP of 10.0.x.7
-
-Connect to the robot's PC:
-```
-$ ssh <username>@10.0.x.5 
-```
-Login info:
-* usr: teamN
-* pwd: smb
-
-Don't forget to build and source smb_opc
-
-
-
-# 2. Hardware Equipment
-T265 stereo fisheye
-![Screenshot](.imgs/t265.PNG)
-
-
-IMU : 400 Hz 
-Joint Encoders: 50 hz
-
-
-# 3. Installing Software
+# Installing Software
 Visit this and follow the tutorial https://ethz-robotx.github.io/SuperMegaBot/
 
 Run the simulation:
