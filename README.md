@@ -71,15 +71,21 @@ $ roslaunch smb smb.launch
 $ roslaunch smb_opc opc.launch
 ```
 
-**LOCALIZE** 
+**LOCALIZATION** 
 ```
 $ roslaunch smb_slam localization.launch
+```
+**SLAM**
+```
+$ roslaunch smb_msf_graph smb_msf_graph.launch launch_o3d_slam:=false
 ```
 **NAVIGATE (with existing map)**
 
 Change *global_map* param to the path of the costmap 
 ```
-$ roslaunch smb_navigation navigate2d_ompl.launch use_global_map:=true
+$ roslaunch smb_navigation navigate2d_ompl.launch global_frame:=world_graph_msf odom_topic:=/graph_msf/est_odometry_odom_imu global_map:= ??
 ```
+
+
 
 
