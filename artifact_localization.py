@@ -6,9 +6,10 @@ import math
 
 
 from object_detection_msgs.msg import   PointCloudArray,ObjectDetectionInfo, ObjectDetectionInfoArray
-from tf2_msgs.msg import TFMessage
 from geometry_msgs.msg import Point
 from nav_msgs.msg import Odometry
+import tf2_ros
+import tf2_geometry_msgs
 
 # GLOBALS:
 confidence_threshold = 0.4
@@ -56,7 +57,7 @@ if __name__ =="__main__":
     while not rospy.is_shutdown():
         detected_obj     = rospy.wait_for_message("/detection_info", ObjectDetectionInfo , timeout=None)
         global_pos_robot = rospy.wait_for_message("/graph_msf/est_odometry_odom_imu", Odometry , timeout=None)
-
+        # transform 
         if (detected_obj.confidence > confidence_threshold) and (detected_obj.class_id in possible_labels):
             detected_obj = object_to_world(detected_obj.position,global_pos_robot)
             store_object(detected_obj)
