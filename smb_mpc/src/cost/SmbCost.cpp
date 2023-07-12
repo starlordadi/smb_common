@@ -48,6 +48,13 @@ ad_vector_t SmbCost::costVectorFunction(ad_scalar_t time,
   /// the desired setpoint. For Task 3, keep the values set in L33-34 You can
   /// use the weight matricies QPosition, QOrientation and R for Task 4.
 
+  // desiredPosition << (ad_scalar_t)2.0, (ad_scalar_t)5.0, (ad_scalar_t)0.0;
+  // desiredOrientation = ad_quat_t(ad_angle_axis_t((ad_scalar_t)M_PI/2, ad_vec3_t::UnitZ()));
+
+  positionError = currentPosition - desiredPosition;
+  orientationError = (desiredOrientation.conjugate() * currentOrientation).vec();
+
+  inputError = input;
 
   ad_vector_t totalCost(positionError.size() + orientationError.size() +
                         inputError.size());

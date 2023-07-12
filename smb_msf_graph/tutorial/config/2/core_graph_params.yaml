@@ -39,7 +39,7 @@ noise_params:
   gyrNoiseDensity: 2.356e-04              # Continuous-time Noise Amplitude Spectral Density (StdDev) [rad/s/√Hz], default=sqrt(3.4906585e-07)
   omegaCoriolis: 1.07e-04                 # Coriolis effect, positive on northern hemisphere, 0 at the equator, default (central europe, Switzerland): 1.07e-04
   ### Bias
-  accBiasRandomWalkNoiseDensity: 4.33e-05 # Continuous-time Noise Amplitude Spectral Density of Accelerometer bias random walk [m/s^3/√Hz], default: sqrt(1.0e-03)
+  accBiasRandomWalkNoiseDensity: 4.33e-03 # Continuous-time Noise Amplitude Spectral Density of Accelerometer bias random walk [m/s^3/√Hz], default: sqrt(1.0e-03)
   gyrBiasRandomWalkNoiseDensity: 2.66e-04 # Continuous-time Noise Amplitude Spectral Density of Gyroscope bias random walk [rad/s^2/√Hz], default: default: sqrt(9.33e-04)
   biasAccOmegaInit: 1.0e-05               # StdDev of bias at start: default: sqrt(1.0e-07)
   accBiasPrior: 0.0                       # Prior/starting value of accelerometer bias
